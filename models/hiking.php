@@ -13,7 +13,7 @@ class Hiking extends Model {
     parent::__construct("hiking");
     // initialize parent class here
   }
-
+    //commentaire
   public function constructFrowRow($row) {
     $this->m_id = $row["id"];
     $this->m_name = $row["name"];
