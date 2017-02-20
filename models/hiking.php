@@ -43,7 +43,7 @@ class Hiking extends Model {
 
   public function findAll() {
     $request = "SELECT * from " . $this->m_table_name;
-    $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name, "root", "");
+    $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name, "root", "root");
 
     $hikings = array();
     $hiking_rows = $pdo->query($request);

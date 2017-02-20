@@ -6,8 +6,8 @@
 	<link rel="stylesheet" href="css/basics.css" media="screen" title="no title" charset="utf-8">
 </head>
 <body>
-	<a href="/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
+	<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
 	<br>
-  <a href="/controllers/index.php?controller=hikings&action=create">Ajouter une randonnée</a>
+	<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=create">Ajouter une randonnée</a>
 </body>
 </html>
