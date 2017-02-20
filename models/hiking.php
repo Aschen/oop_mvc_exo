@@ -17,6 +17,11 @@ class Hiking extends Model {
   public function constructFrowRow($row) {
     $this->m_id = $row["id"];
     $this->m_name = $row["name"];
+    $this->m_difficulty = $row["difficulty"];
+    $this->m_distance = $row["distance"];
+    $this->m_duration = $row["duration"];
+    $this->m_height_difference = $row["height difference"];
+
     // Initialize object from a database row
   }
 
