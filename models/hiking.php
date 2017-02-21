@@ -22,6 +22,7 @@ class Hiking extends Model
         $this->m_id = $row["id"];
         $this->m_name = $row["name"];
         $this->m_distance = $row["distance"];
+        $this->m_difficulty = $row["difficulty"];
         $this->m_duration = $row["duration"];
         $this->m_height_difference = $row["height_difference"];
     // Initialize object from a database row
@@ -29,13 +30,17 @@ class Hiking extends Model
 
     public function save()
     {
-        echo "Implement function save()";
+
+       $request = "UPDATE" . $this->m_table_name . "SET name=" . $this->m_name . ", difficulty=" . $this->m_difficulty . ", distance=" . $this->m_distance . ", duration=" . $this->m_duration . ", height_difference=" . $this->m_height_difference. " WHERE id=" . $this->m_id;
+       $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
+       $pdo->query($request);
+       echo $this->m_name;
     }
 
     public function find($id)
     {
-        $request = "SELECT * from " . $this->m_table_name . " WHERE id=" . $id;
-        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name, "root", "root");
+        $request = "SELECT * FROM " . $this->m_table_name . " WHERE id=" . $id;
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
 
         $hiking_row = $pdo->query($request)->fetch();
 
@@ -47,8 +52,8 @@ class Hiking extends Model
 
     public function findAll()
     {
-        $request = "SELECT * from " . $this->m_table_name;
-        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name, "root", "root");
+        $request = "SELECT * FROM " . $this->m_table_name;
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
 
         $hikings = array();
         $hiking_rows = $pdo->query($request);
@@ -60,6 +65,7 @@ class Hiking extends Model
 
         return $hikings;
     }
+
 
     public function setName($name)
     {
