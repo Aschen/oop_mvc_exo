@@ -8,6 +8,6 @@
 <body>
 	<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
 	<br>
-  <a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=create">Ajouter une randonnée</a>
+  <a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=add">Ajouter une randonnée</a>
 </body>
 </html>

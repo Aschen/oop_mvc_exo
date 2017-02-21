@@ -9,7 +9,7 @@ abstract class Controller {
 
   abstract public function index();
   abstract public function add();
-  abstract public function create();
+  abstract public function create($attributes);
   abstract public function edit($id);
   abstract public function update($attributes);
   abstract public function delete($id);

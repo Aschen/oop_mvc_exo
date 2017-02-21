@@ -21,9 +21,12 @@ class HikingsController extends Controller
         header("Location: /oop_mvc_exo/views/create_hiking.php");
     }
 
-    public function create()
+    public function create($attributes)
     {
-
+        $hiking_model = new Hiking();
+        $hiking_model->constructFrowRow($attributes);
+        $hiking_model->sqlCreate();
+//        print_r($hiking_model);
     }
 
     public function delete($id)

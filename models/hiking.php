@@ -25,18 +25,27 @@ class Hiking extends Model
         $this->m_difficulty = $row["difficulty"];
         $this->m_duration = $row["duration"];
         $this->m_height_difference = $row["height_difference"];
-    // Initialize object from a database row
-  }
+        // Initialize object from a database row
+    }
+
+
+    public function sqlCreate()
+    {
+
+      $request = "INSERT INTO hiking (name, difficulty, distance, duration, height_difference) VALUES (\"{$this->m_name}\", \"{$this->m_difficulty}\", \"{$this->m_distance}\", \"{$this->m_duration}\", \"{$this->m_height_difference}\")";
+
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
+        $pdo->query($request);
+
+    }
 
     public function save()
     {
-       $request = "UPDATE {$this->m_table_name} SET name=\"{$this->m_name}\", difficulty=\"{$this->m_difficulty}\", distance=\"{$this->m_distance}\", duration=\"{$this->m_duration}\", height_difference=\"{$this->m_height_difference}\" WHERE id={$this->m_id}";
+        $request = "UPDATE {$this->m_table_name} SET name=\"{$this->m_name}\", difficulty=\"{$this->m_difficulty}\", distance=\"{$this->m_distance}\", duration=\"{$this->m_duration}\", height_difference=\"{$this->m_height_difference}\" WHERE id={$this->m_id}";
 
         $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
-       $pdo->query($request);
-       echo $this->m_name;
-       echo '<br>';
-       echo $request;
+        $pdo->query($request);
+
     }
 
     public function find($id)

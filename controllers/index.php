@@ -22,7 +22,7 @@ if ($controller == "hikings") {
       $hikings_controller->add();
   }
   else if ($action == "create") {
-      $hikings_controller->create($_POST["name"],  $_POST["difficulty"],  $_POST["distance"], $_POST["duration"], $_POST["height_difference"]);
+      $hikings_controller->create($_POST["hiking"]);
   }
   else {
     echo "Unknown action '" . $action . "'";
