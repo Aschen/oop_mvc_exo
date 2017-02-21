@@ -42,11 +42,7 @@ class HikingsController extends Controller
         $hiking_model = new Hiking();
         $hiking = $hiking_model->find($attributes["id"]);
         $hiking->constructFrowRow($attributes);
-//        $hiking->m_name = $attributes["name"];
-//        $hiking->m_difficulty = $attributes["difficulty"];
-//        $hiking->m_distance = $attributes["distance"];
-//        $hiking->m_duration = $attributes["duration"];
-//        $hiking->m_height_difference = $attributes["height_difference"];
+
         print_r($hiking);
         $hiking->save();
     }

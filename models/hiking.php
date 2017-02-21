@@ -30,11 +30,13 @@ class Hiking extends Model
 
     public function save()
     {
+       $request = "UPDATE {$this->m_table_name} SET name=\"{$this->m_name}\", difficulty=\"{$this->m_difficulty}\", distance=\"{$this->m_distance}\", duration=\"{$this->m_duration}\", height_difference=\"{$this->m_height_difference}\" WHERE id={$this->m_id}";
 
-       $request = "UPDATE" . $this->m_table_name . "SET name=" . $this->m_name . ", difficulty=" . $this->m_difficulty . ", distance=" . $this->m_distance . ", duration=" . $this->m_duration . ", height_difference=" . $this->m_height_difference. " WHERE id=" . $this->m_id;
-       $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
        $pdo->query($request);
        echo $this->m_name;
+       echo '<br>';
+       echo $request;
     }
 
     public function find($id)
