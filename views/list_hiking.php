@@ -13,14 +13,14 @@
       $hikings = $hiking_model->findAll();
      ?>
     <h1>Liste des randonnées</h1>
-    <a href="/index.php">Retour à l'accueil</a>
+    <a href="/oop_mvc_exo/index.php">Retour à l'accueil</a>
     <br>
     <br>
     <table>
       <?php
         foreach ( $hikings as $hiking) {
           echo "Randonnée : " . $hiking->getName();
-          echo '<a href="/controllers/index.php?controller=hikings&action=edit&id=' . $hiking->id() . '">Edit</a>';
+          echo '<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=edit&id=' . $hiking->id() . '">Edit</a>';
           echo "<br>";
         }
       ?>

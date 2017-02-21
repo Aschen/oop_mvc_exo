@@ -14,9 +14,9 @@
 		$hiking = $hiking_model->find($hiking_id);
 	?>
 
-	<a href="/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
+	<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
 	<h1>Ajouter</h1>
-	<form action="/controllers/index.php?controller=hikings&action=update" method="post">
+	<form action="/oop_mvc_exo/controllers/index.php?controller=hikings&action=update" method="post">
 		<input type="hidden" name="hiking[id]" value="<?php echo $hiking->id(); ?>">
 		<div>
 			<label for="name">Name</label>
