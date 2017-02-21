@@ -10,7 +10,7 @@ class HikingsController extends Controller {
   }
 
   public function index() {
-    header("Location: /views/list_hiking.php");
+    header("Location: /oop_mvc_exo/views/list_hiking.php");
   }
 
   public function add() {
@@ -18,7 +18,7 @@ class HikingsController extends Controller {
   }
 
   public function create() {
-
+    header("Location: /oop_mvc_exo/views/create_hiking.php");
   }
 
   public function delete($id) {
@@ -26,7 +26,7 @@ class HikingsController extends Controller {
   }
 
   public function edit($id) {
-    header("Location: /views/update_hiking.php?hiking_id=" . $id);
+    header("Location: /oop_mvc_exo/views/update_hiking.php?hiking_id=" . $id);
   }
 
   public function update($attributes) {
