@@ -34,8 +34,10 @@ class Hiking extends Model
 
       $request = "INSERT INTO hiking (name, difficulty, distance, duration, height_difference) VALUES (\"{$this->m_name}\", \"{$this->m_difficulty}\", \"{$this->m_distance}\", \"{$this->m_duration}\", \"{$this->m_height_difference}\")";
 
-        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
-        $pdo->query($request);
+        $pdo_requete = new Hiking();
+
+        $connect = $pdo_requete->pdo_connect();
+        $connect->query($request);
 
     }
 
@@ -43,7 +45,7 @@ class Hiking extends Model
     {
         $request = "UPDATE {$this->m_table_name} SET name=\"{$this->m_name}\", difficulty=\"{$this->m_difficulty}\", distance=\"{$this->m_distance}\", duration=\"{$this->m_duration}\", height_difference=\"{$this->m_height_difference}\" WHERE id={$this->m_id}";
 
-        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "$this->m_mdp_sql");
         $pdo->query($request);
 
     }
@@ -51,7 +53,7 @@ class Hiking extends Model
     public function find($id)
     {
         $request = "SELECT * FROM " . $this->m_table_name . " WHERE id=" . $id;
-        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "root");
+        $pdo = new PDO('mysql:host=localhost;dbname=' . $this->m_database_name . ';charset=utf8', "root", "$this->m_mdp_sql");
 
         $hiking_row = $pdo->query($request)->fetch();
 
@@ -91,64 +93,64 @@ class Hiking extends Model
     /**
      * @return mixed
      */
-    public function getMDifficulty()
+    public function getDifficulty()
     {
         return $this->m_difficulty;
     }
 
     /**
-     * @param mixed $m_difficulty
+     * @param mixed $difficulty
      */
-    public function setMDifficulty($m_difficulty)
+    public function setDifficulty($difficulty)
     {
-        $this->m_difficulty = $m_difficulty;
+        $this->m_difficulty = $difficulty;
     }
 
     /**
      * @return mixed
      */
-    public function getMDistance()
+    public function getDistance()
     {
         return $this->m_distance;
     }
 
     /**
-     * @param mixed $m_distance
+     * @param mixed $distance
      */
-    public function setMDistance($m_distance)
+    public function setDistance($distance)
     {
-        $this->m_distance = $m_distance;
+        $this->m_distance = $distance;
     }
 
     /**
      * @return mixed
      */
-    public function getMDuration()
+    public function getDuration()
     {
         return $this->m_duration;
     }
 
     /**
-     * @param mixed $m_duration
+     * @param mixed $duration
      */
-    public function setMDuration($m_duration)
+    public function setDuration($duration)
     {
-        $this->m_duration = $m_duration;
+        $this->m_duration = $duration;
     }
 
     /**
      * @return mixed
      */
-    public function getMHeightDifference()
+    public function getHeightDifference()
     {
         return $this->m_height_difference;
     }
 
     /**
-     * @param mixed $m_height_difference
+     * @param mixed $height_difference
      */
-    public function setMHeightDifference($m_height_difference)
+    public function setHeightDifference($height_difference)
     {
-        $this->m_height_difference = $m_height_difference;
+        $this->m_height_difference = $height_difference;
     }
 }

@@ -8,7 +8,7 @@
 <body>
 
 
-<a href="/php-pdo/read.php">Liste des données</a>
+<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=index">Liste des données</a>
 <h1>Ajouter</h1>
 <!--  on renvoie à l'index php controller avec une action create pour qu'il crée l'entrée dans la base de données  -->
 <form action="/oop_mvc_exo/controllers/index.php?controller=hikings&action=create" method="post">

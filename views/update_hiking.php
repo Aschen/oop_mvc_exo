@@ -26,7 +26,7 @@
 		<div>
 			<label for="difficulty">Difficulté</label>
 			<select name="hiking[difficulty]">
-                <option value="<?php echo $hiking->getMDifficulty() ?>"></option>
+                <option value="<?php echo $hiking->getDifficulty() ?>"></option>
 				<option value="très facile">Très facile</option>
 				<option value="facile">Facile</option>
 				<option value="moyen">Moyen</option>
@@ -37,15 +37,15 @@
 
 		<div>
 			<label for="distance">Distance</label>
-			<input type="text" name="hiking[distance]" value="<?php echo $hiking->getMDistance() ?>">
+			<input type="text" name="hiking[distance]" value="<?php echo $hiking->getDistance() ?>">
 		</div>
 		<div>
 			<label for="duration">Durée</label>
-			<input type="duration" name="hiking[duration]" value="<?php echo $hiking->getMDuration() ?>">
+			<input type="duration" name="hiking[duration]" value="<?php echo $hiking->getDuration() ?>">
 		</div>
 		<div>
 			<label for="height_difference">Dénivelé</label>
-			<input type="text" name="hiking[height_difference]" value="<?php echo $hiking->getMHeightDifference() ?>">
+			<input type="text" name="hiking[height_difference]" value="<?php echo $hiking->getHeightDifference() ?>">
 		</div>
 		<input type="submit" name="button">Envoyer</button>
 	</form>
