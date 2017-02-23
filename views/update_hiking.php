@@ -14,9 +14,9 @@
 		$hiking = $hiking_model->find($hiking_id);
 	?>
 
-	<a href="/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
+	<a href="/oop_mvc_exo/controllers/index.php?controller=hikings&action=index">Liste des randonnées</a>
 	<h1>Ajouter</h1>
-	<form action="/controllers/index.php?controller=hikings&action=update" method="post">
+	<form action="/oop_mvc_exo/controllers/index.php?controller=hikings&action=update" method="post">
 		<input type="hidden" name="hiking[id]" value="<?php echo $hiking->id(); ?>">
 		<div>
 			<label for="name">Name</label>
@@ -26,6 +26,7 @@
 		<div>
 			<label for="difficulty">Difficulté</label>
 			<select name="hiking[difficulty]">
+                <option value="<?php echo $hiking->getDifficulty() ?>"></option>
 				<option value="très facile">Très facile</option>
 				<option value="facile">Facile</option>
 				<option value="moyen">Moyen</option>
@@ -36,15 +37,15 @@
 
 		<div>
 			<label for="distance">Distance</label>
-			<input type="text" name="hiking[distance]" value="">
+			<input type="text" name="hiking[distance]" value="<?php echo $hiking->getDistance() ?>">
 		</div>
 		<div>
 			<label for="duration">Durée</label>
-			<input type="duration" name="hiking[duration]" value="">
+			<input type="duration" name="hiking[duration]" value="<?php echo $hiking->getDuration() ?>">
 		</div>
 		<div>
 			<label for="height_difference">Dénivelé</label>
-			<input type="text" name="hiking[height_difference]" value="">
+			<input type="text" name="hiking[height_difference]" value="<?php echo $hiking->getHeightDifference() ?>">
 		</div>
 		<input type="submit" name="button">Envoyer</button>
 	</form>

@@ -18,6 +18,12 @@ if ($controller == "hikings") {
   else if ($action == "update") {
     $hikings_controller->update($_POST["hiking"]);
   }
+  else if ($action == "add") {
+      $hikings_controller->add();
+  }
+  else if ($action == "create") {
+      $hikings_controller->create($_POST["hiking"]);
+  }
   else {
     echo "Unknown action '" . $action . "'";
   }
